@@ -1,1 +1,1 @@
-json.array! @pupils, partial: 'pupil', as: :pupil
+json.array! @agencies, partial: 'agency', as: :agency

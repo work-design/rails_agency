@@ -7,7 +7,6 @@ class Agency::My::AgenciesController < Agency::My::BaseController
 
   def new
     @agency = current_agent.agent_agencies.build
-    @agency.build_client
   end
 
   def create

@@ -1,4 +1,4 @@
-class Profile::Admin::AgenciesController < Profile::Admin::BaseController
+class Agency::Admin::AgenciesController < Agency::Admin::BaseController
   before_action :set_agency, only: [
     :show, :edit, :update,
     :edit_crowd, :update_crowd, :destroy_crowd, :destroy_card,

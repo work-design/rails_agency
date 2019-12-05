@@ -1,6 +1,6 @@
-<%= form_with model: [:my, @tutelage] do |f| %>
-  <%= render 'shared/error_messages', target: @tutelage %>
-  <%= f.select :relation, options_for_select(Tutelage.options_i18n(:relation)) %>
+<%= form_with model: [:my, @agency] do |f| %>
+  <%= render 'shared/error_messages', target: @agency %>
+  <%= f.select :relation, options_for_select(Agency.options_i18n(:relation)) %>
   <%= f.fields :client do |ef| %>
     <%= ef.text_field :real_name %>
     <%= ef.text_field :nick_name %>

@@ -1,5 +1,5 @@
 json.extract!(
-  pupil,
+  agent,
   :id,
   :name,
   :petname,

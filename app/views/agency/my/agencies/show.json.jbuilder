@@ -1,1 +1,1 @@
-json.partial! 'pupil', pupil: @pupil
+json.partial! 'agency', agency: @agency
