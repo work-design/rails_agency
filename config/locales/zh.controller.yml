@@ -1,0 +1,20 @@
+zh:
+  profile:
+    admin:
+      title: 区域管理
+      areas:
+        index:
+          title: 地区
+      agencies:
+        index:
+          title: 会员列表
+    my:
+      title: 个人中心
+      profiles:
+        index:
+          title: 个人资料
+        new:
+          title: 添加个人资料
+      agencies:
+        index:
+          title: 我的客户

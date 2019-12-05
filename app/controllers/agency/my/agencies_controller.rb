@@ -1,8 +1,8 @@
-class Profile::Membership::AgenciesController < Profile::Membership::BaseController
+class Agency::My::AgenciesController < Agency::My::BaseController
   before_action :set_agency, only: [:show, :edit, :update, :destroy]
 
   def index
-    @agencies = current_agent.agent_agencies.includes(:pupil).page(params[:page])
+    @agencies = current_agent.agent_agencies.includes(:client).page(params[:page])
   end
 
   def new
@@ -11,7 +11,7 @@ class Profile::Membership::AgenciesController < Profile::Membership::BaseControl
   end
 
   def create
-    @agency = current_agent.agent_agencies.build(protege_params)
+    @agency = current_agent.agent_agencies.build(agency_params)
 
     unless @agency.save
       render :new, locals: { model: @agency }, status: :unprocessable_entity
@@ -25,7 +25,7 @@ class Profile::Membership::AgenciesController < Profile::Membership::BaseControl
   end
 
   def update
-    @agency.assign_attribute(protege_params)
+    @agency.assign_attribute(agency_params)
     
     unless @agency.save
       render :edit, locals: { model: @agency }, status: :unprocessable_entity
@@ -54,7 +54,7 @@ class Profile::Membership::AgenciesController < Profile::Membership::BaseControl
     )
   end
 
-  def agencies_params
+  def agency_params
     params.fetch(:agency, {}).permit(
       :relation,
       client_attributes: {}
