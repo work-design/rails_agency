@@ -10,7 +10,7 @@
       <th><%= Agency.human_attribute_name(:commission_ratio) %></th>
       <th><%= Agency.human_attribute_name('client.name') %></th>
       <th>
-        <%= link_to detect_admin_agencies_path, remote: true, class: 'ui mini teal button' do %>
+        <%= link_to new_my_agency_path, remote: true, class: 'ui mini teal button' do %>
           <i class="fas fa-plus"></i><%= t('.new') %>
         <% end %>
       </th>
