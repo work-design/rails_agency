@@ -56,6 +56,8 @@ class Agency::My::AgenciesController < Agency::My::BaseController
   def agency_params
     params.fetch(:agency, {}).permit(
       :relation,
+      :client_type,
+      :client_id,
       client_attributes: {}
     )
   end
