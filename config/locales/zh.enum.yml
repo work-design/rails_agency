@@ -1,10 +1,6 @@
 zh:
   activerecord:
     enum:
-      profile:
-        birthday_type:
-          solar: 阳历
-          lunar: 阴历
-        gender:
-          male: 男
-          female: 女
+      agency:
+        relation:
+          unknown: 未知

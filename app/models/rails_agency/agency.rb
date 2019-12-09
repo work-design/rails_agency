@@ -14,12 +14,7 @@ module RailsAgency::Agency
     accepts_nested_attributes_for :agent, reject_if: :all_blank
     accepts_nested_attributes_for :client, reject_if: :all_blank
 
-    enum relation: {
-      son: 'son',
-      grandson: 'grandson',
-      nephew: 'nephew',
-      unknown: 'unknown'
-    }
+    enum relation: options_i18n(:relation).values.map { |i| [i.to_sym, i.to_s] }.to_h
   end
 
   def name
