@@ -9,8 +9,6 @@ module RailsAgency::Agency
     belongs_to :agent, polymorphic: true
     belongs_to :client, polymorphic: true
 
-    has_many :cards, dependent: :nullify
-
     accepts_nested_attributes_for :agent, reject_if: :all_blank
     accepts_nested_attributes_for :client, reject_if: :all_blank
 
