@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  scope :admin, module: 'agency/admin', as: 'admin' do
+  scope :admin, module: 'agency/admin', as: :admin do
     resources :agencies do
       member do
         get 'crowd' => :edit_crowd
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
   
-  scope :my, module: 'agency/my', as: 'my' do
+  scope :my, module: 'agency/my', as: :my do
     resources :agencies
   end
   

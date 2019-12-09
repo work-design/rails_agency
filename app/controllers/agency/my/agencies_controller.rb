@@ -24,7 +24,7 @@ class Agency::My::AgenciesController < Agency::My::BaseController
   end
 
   def update
-    @agency.assign_attribute(agency_params)
+    @agency.assign_attributes(agency_params)
     
     unless @agency.save
       render :edit, locals: { model: @agency }, status: :unprocessable_entity
@@ -58,6 +58,8 @@ class Agency::My::AgenciesController < Agency::My::BaseController
       :relation,
       :client_type,
       :client_id,
+      :commission_ratio,
+      :note,
       client_attributes: {}
     )
   end

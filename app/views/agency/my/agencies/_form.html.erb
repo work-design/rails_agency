@@ -1,14 +1,7 @@
 <%= form_with model: [:my, @agency] do |f| %>
   <%= render 'shared/error_messages', target: @agency %>
   <%= f.select :relation, options_for_select(Agency.options_i18n(:relation)) %>
-  <%= f.fields :client do |ef| %>
-    <%= ef.text_field :real_name %>
-    <%= ef.text_field :nick_name %>
-    <%= ef.select :birthday_type, options_for_select(Profile.options_i18n(:birthday_type)) %>
-    <%= ef.date_field :birthday %>
-    <%= ef.select :gender, options_for_select(Profile.options_i18n(:gender)) %>
-    <%= ef.text_field :note %>
-    <%= ef.file_field :avatar %>
-  <% end %>
+  <%= f.number_field :commission_ratio, step: '0.01' %>
+  <%= f.text_area :note %>
   <%= f.submit %>
 <% end %>

@@ -28,11 +28,11 @@ module RailsAgency::Agency
 
   class_methods do
     def agent_types
-      self.unscoped.select(:agent_type).distinct.pluck(:agent_type).sort!
+      self.unscoped.select(:agent_type).distinct.pluck(:agent_type).compact.sort!
     end
 
     def client_types
-      self.unscoped.select(:client_type).distinct.pluck(:client_type).sort!
+      self.unscoped.select(:client_type).distinct.pluck(:client_type).compact.sort!
     end
   end
 
