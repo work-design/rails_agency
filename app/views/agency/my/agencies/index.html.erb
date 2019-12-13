@@ -22,7 +22,9 @@
       <td><%= agency.relation_i18n %></td>
       <td><%= agency.note %></td>
       <td><%= agency.commission_ratio %></td>
-      <td><%= agency.client.name %></td>
+      <td>
+        <%= link_to agency.client.name %>
+      </td>
       <td>
         <%= link_to my_agency_path(agency), data: { tooltip: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
           <i class="fas fa-eye"></i>
