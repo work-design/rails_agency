@@ -10,5 +10,4 @@ module RailsAgency::Agent
     accepts_nested_attributes_for :agent_agencies, reject_if: :all_blank
   end
 
-
 end
