@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary = 'Summary of RailsAgency.'
   s.description = 'Description of RailsAgency.'
   s.license = 'LGPL-3.0'
-  
+
   s.files = Dir[
     '{app,config,db,lib}/**/*',
     'LICENSE',
@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
     'README.md'
   ]
 
-  s.add_dependency 'rails_com'
-
+  s.add_dependency 'rails_com', '~> 1.2'
   s.add_development_dependency 'sqlite3'
 end
