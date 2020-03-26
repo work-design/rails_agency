@@ -1,5 +1,5 @@
 # RailsAgency
-Short description and motivation.
+代理人
 
 ## Usage
 How to use my plugin.
