@@ -36,7 +36,7 @@
             <% end %>
           </div>
         <% end %>
-        <%= link_to crowd_admin_agency_path(agency), data: { tooltip: '分班' }, class: 'ui mini circular icon button', remote: true do %>
+        <%= link_to crowd_admin_agency_path(agency), aria: { label: '分班' }, class: 'ui mini circular icon button', remote: true do %>
           <i class="hand point right icon"></i>
         <% end %>
       </td>
