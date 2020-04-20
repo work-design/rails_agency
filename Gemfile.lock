@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: caad660217b2f71587243270e32c008a7856f5f3
+  revision: 99fefad3dfb97018f1a2db18e3f08e2ffb4f3aa3
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -166,4 +166,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.1.2
+   2.1.4

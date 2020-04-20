@@ -1,6 +1,4 @@
-<div class="ui top attached segment">
-  <%= render 'filter' %>
-</div>
+<%= render 'filter_form' %>
 
 <table class="table is-hoverable is-fullwidth">
   <thead>
@@ -21,7 +19,7 @@
       <td><%= agency.client.age %></td>
       <td>
         <span class="ui icon label">
-          <i class="fas <%= active_assert(agency.client.male?, expected: 'fa-male', unexpected: 'fa-female') %>"></i>
+          <i class="fas <%= agency.client.male? ? 'fa-male' : 'fa-female' %>"></i>
           <%= agency.client.gender_i18n %>
         </span>
       </td>
