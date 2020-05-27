@@ -1,11 +1,11 @@
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 99fefad3dfb97018f1a2db18e3f08e2ffb4f3aa3
+  revision: 48adc26b3f733e38d671c082dbc8c3a6275c9f72
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
       http-form_data (~> 2.2)
-      httpx (~> 0.5)
+      httpx (~> 0.8)
       rails (~> 6.0)
 
 PATH
@@ -87,7 +87,7 @@ GEM
       activesupport (>= 4.2.0)
     http-2-next (0.2.6)
     http-form_data (2.3.0)
-    httpx (0.7.0)
+    httpx (0.8.2)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.2)
