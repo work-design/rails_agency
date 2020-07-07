@@ -1,7 +1,7 @@
-class Agency::My::BaseController < RailsAgency.config.my_controller.constantize
+class Agency::My::BaseController < MyController
 
   def current_agent
     current_member
   end
-  
+
 end

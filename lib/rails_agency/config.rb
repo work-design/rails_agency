@@ -4,9 +4,12 @@ module RailsAgency #:nodoc:
   include ActiveSupport::Configurable
 
   configure do |config|
-    config.app_controller = 'ApplicationController'
-    config.my_controller = 'MyController'
-    config.admin_controller = 'AdminController'
+    config.client_types = [
+      'Profile'
+    ]
+    config.agent_types = [
+      'User', 'Member'
+    ]
   end
 
 end

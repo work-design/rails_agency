@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   scope :admin, module: 'agency/admin', as: :admin do
     resources :agencies do
       member do
@@ -10,9 +10,13 @@ Rails.application.routes.draw do
       end
     end
   end
-  
+
   scope :my, module: 'agency/my', as: :my do
     resources :agencies
   end
-  
+
+  scope :mine, module: 'agency/mine', as: :mine do
+    resources :agencies
+  end
+
 end

@@ -1,4 +1,4 @@
-class Agency::Admin::BaseController < RailsAgency.config.admin_controller.constantize
+class Agency::Admin::BaseController < AdminController
 
 
 end
