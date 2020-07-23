@@ -2,15 +2,15 @@ class Agency::My::AgenciesController < Agency::My::BaseController
   before_action :set_agency, only: [:show, :edit, :update, :destroy]
 
   def index
-    @agencies = current_agent.agent_agencies.includes(:client).page(params[:page])
+    @agencies = current_agent.agencies.includes(:client).page(params[:page])
   end
 
   def new
-    @agency = current_agent.agent_agencies.build
+    @agency = current_agent.agencies.build
   end
 
   def create
-    @agency = current_agent.agent_agencies.build(agency_params)
+    @agency = current_agent.agencies.build(agency_params)
 
     unless @agency.save
       render :new, locals: { model: @agency }, status: :unprocessable_entity
@@ -25,7 +25,7 @@ class Agency::My::AgenciesController < Agency::My::BaseController
 
   def update
     @agency.assign_attributes(agency_params)
-    
+
     unless @agency.save
       render :edit, locals: { model: @agency }, status: :unprocessable_entity
     end
@@ -41,7 +41,7 @@ class Agency::My::AgenciesController < Agency::My::BaseController
   end
 
   def client_params
-    params.fetch(:pupil, {}).permit(
+    params.fetch(:profile, {}).permit(
       :real_name,
       :nick_name,
       :birthday_type,
