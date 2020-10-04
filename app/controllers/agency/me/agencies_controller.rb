@@ -1,21 +1,18 @@
-class Agency::Mine::AgenciesController < Agency::Mine::BaseController
+class Agency::Me::AgenciesController < Agency::Me::BaseController
   before_action :set_agency, only: [:show, :edit, :update, :destroy]
 
   def index
-    @agencies = current_user.agencies.includes(:client).page(params[:page])
+    @agencies = current_agent.agencies.includes(:client).page(params[:page])
   end
 
   def new
-    @agency = current_user.agencies.build
-    @agency.build_client
+    @agency = current_agent.agencies.build
   end
 
   def create
-    @agency = current_user.agencies.build(agency_params)
+    @agency = current_agent.agencies.build(agency_params)
 
-    if @agency.save
-      render 'create', locals: { return_to: mine_agencies_url }
-    else
+    unless @agency.save
       render :new, locals: { model: @agency }, status: :unprocessable_entity
     end
   end
@@ -44,7 +41,7 @@ class Agency::Mine::AgenciesController < Agency::Mine::BaseController
   end
 
   def client_params
-    params.fetch(:client, {}).permit(
+    params.fetch(:profile, {}).permit(
       :real_name,
       :nick_name,
       :birthday_type,
@@ -60,6 +57,7 @@ class Agency::Mine::AgenciesController < Agency::Mine::BaseController
     params.fetch(:agency, {}).permit(
       :relation,
       :client_type,
+      :client_id,
       :commission_ratio,
       :note,
       client_attributes: {}
