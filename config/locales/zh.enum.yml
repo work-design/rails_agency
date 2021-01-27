@@ -1,6 +1,6 @@
 zh:
   activerecord:
     enum:
-      agency:
+      agential/agency:
         relation:
           unknown: 未知

@@ -1,6 +1,6 @@
 en:
   activerecord:
     enum:
-      agency:
+      agential/agency:
         relation:
           unknown: Unknown
