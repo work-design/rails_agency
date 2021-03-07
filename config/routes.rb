@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope :admin, module: 'agency/admin', as: :admin do
+  scope :admin, module: 'agential/admin', as: :admin, defaults: { business: 'agential', namespace: 'admin' } do
     resources :agencies do
       member do
         get 'crowd' => :edit_crowd
@@ -11,11 +11,11 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :my, module: 'agency/my', as: :my do
+  scope :my, module: 'agential/my', as: :my, defaults: { business: 'agential', namespace: 'my' } do
     resources :agencies
   end
 
-  scope :mine, module: 'agency/mine', as: :mine do
+  scope :me, module: 'agential/me', as: :me, defaults: { business: 'agential', namespace: 'me' } do
     resources :agencies
   end
 
