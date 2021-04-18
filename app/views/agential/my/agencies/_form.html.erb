@@ -1,22 +1,19 @@
-<%= form_with theme: 'weui', model: [:mine, @agency] do |f| %>
-  <%= render 'shared/error_messages', target: @agency %>
-  <div class="weui-form__control-area">
-    <div class="weui-cells__group weui-cells__group_form">
-      <div class="weui-cells__title">关系</div>
-      <div class="weui-cells weui-cells_form">
-        <%= f.select :relation, options_for_select(Agency.options_i18n(:relation)) %>
-      </div>
-    </div>
-    <div class="weui-cells__group weui-cells__group_form">
-      <div class="weui-cells__title">信息</div>
-      <div class="weui-cells weui-cells_form">
-        <%= f.fields :client do |ef| %>
-          <%= ef.select :birthday_type, options_for_select(Profile.options_i18n(:birthday_type)) %>
-          <%= ef.date_field :birthday %>
-          <%= ef.select :gender, options_for_select(Profile.options_i18n(:gender)) %>
-        <% end %>
-      </div>
+<%= render 'shared/error_messages', target: f.object %>
+<div class="weui-form__control-area">
+  <div class="weui-cells__group weui-cells__group_form">
+    <div class="weui-cells__title">关系</div>
+    <div class="weui-cells weui-cells_form">
+      <%= f.select :relation, options_for_select(Agential::Agency.options_i18n(:relation)) %>
     </div>
   </div>
-  <%= f.submit '下一步', wrap: { all: nil } %>
-<% end %>
+  <div class="weui-cells__group weui-cells__group_form">
+    <div class="weui-cells__title">信息</div>
+    <div class="weui-cells weui-cells_form">
+      <%= f.fields :client do |ef| %>
+        <%= ef.select :birthday_type, options_for_select(Profiled::Profile.options_i18n(:birthday_type)) %>
+        <%= ef.date_field :birthday %>
+        <%= ef.select :gender, options_for_select(Profiled::Profile.options_i18n(:gender)) %>
+      <% end %>
+    </div>
+  </div>
+</div>

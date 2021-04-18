@@ -15,7 +15,7 @@ module Agential
       @agency = current_user.agencies.build(agency_params)
 
       if @agency.save
-        render 'create', locals: { return_to: mine_agencies_url }
+        render 'create', locals: { return_to: url_for(action: 'index') }
       else
         render :new, locals: { model: @agency }, status: :unprocessable_entity
       end
