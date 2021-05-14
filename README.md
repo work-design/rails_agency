@@ -1,5 +1,5 @@
 # RailsAgency
-代理人
+代理人。
 
 ## Usage
 

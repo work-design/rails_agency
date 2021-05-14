@@ -13,6 +13,5 @@ module Agential
       id
     end
 
-
   end
 end
