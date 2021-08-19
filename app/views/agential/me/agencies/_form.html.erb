@@ -1,5 +1,5 @@
 <%= form_with model: [:my, @agency] do |f| %>
-  <%= render 'shared/error_messages', target: @agency %>
+  <%= render 'error_messages', target: f.object %>
   <%= f.select :relation, options_for_select(Agency.options_i18n(:relation)) %>
   <%= f.number_field :commission_ratio, step: '0.01' %>
   <%= f.text_area :note %>
