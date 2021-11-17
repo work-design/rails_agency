@@ -1,9 +1,6 @@
-$:.push File.expand_path('lib', __dir__)
-require 'rails_agency/version'
-
 Gem::Specification.new do |s|
   s.name = 'rails_agency'
-  s.version = RailsAgency::VERSION
+  s.version = '0.0.1'
   s.authors = ['qinmingyuan']
   s.email = ['mingyuan0715@foxmail.com']
   s.homepage = 'https://github.com/work-design/rails_agency'
@@ -18,6 +15,5 @@ Gem::Specification.new do |s|
     'README.md'
   ]
 
-  s.add_dependency 'rails_com', '~> 1.2'
-  s.add_development_dependency 'sqlite3'
+  s.add_dependency 'rails_extend'
 end
