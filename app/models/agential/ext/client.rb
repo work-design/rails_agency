@@ -1,5 +1,5 @@
 module Agential
-  module Model::Client
+  module Ext::Client
     extend ActiveSupport::Concern
 
     included do
