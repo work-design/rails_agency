@@ -15,20 +15,6 @@ module Agential
       @agencies = Agency.distinct.joins(:cards).where.not(cards: { id: nil }).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @agency.assign_attributes(agency_params)
-
-      unless @agency.save
-        render :edit, locals: { model: @agency }, status: :unprocessable_entity
-      end
-    end
-
     def edit_crowd
       q_params = {
         'id-not': @agency.crowd_ids
@@ -60,10 +46,6 @@ module Agential
       if card.save
         render 'update'
       end
-    end
-
-    def destroy
-      @agency.destroy
     end
 
     private

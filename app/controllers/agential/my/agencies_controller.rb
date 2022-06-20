@@ -21,24 +21,6 @@ module Agential
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @agency.assign_attributes(agency_params)
-
-      unless @agency.save
-        render :edit, locals: { model: @agency }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @agency.destroy
-    end
-
     private
     def set_agency
       @agency = Agency.find(params[:id])
